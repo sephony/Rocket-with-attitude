@@ -2,6 +2,8 @@
 
 /***** Priavte Varibles Definition*****/
 // File file;
+std::vector<std::array<std::string, 2>> files;
+std::vector<std::string> dirs;
 /* Main Program Varibles */
 unsigned long time_launch;
 unsigned long time_para;
@@ -14,7 +16,7 @@ char str_height_filter[20];
 char str_time[20];
 char InformationToPrint[100];
 
-float H0 = 0;
+float H0 = 0.0;
 double T_detach;
 double T_para;
 double H_para;
@@ -25,11 +27,15 @@ String nowTime;
 String fileName;
 String lastFileName;
 String lastRunMode;
-String lastLaunchMode;
+String lastParaMode;
 String lastLaunchReady;
+unsigned long lastReport;
+unsigned long lastMqttConnectionAttempt;
 
 bool Sign_Parachute = false;
 bool sign_setTime = false;
 bool sign_beginNTPClient = false;
 bool sign_timeUpdate = false;
 bool sign_needReset = false;
+bool sign_initServo = false;
+bool sign_needMqttConnect = false;
